@@ -1,0 +1,38 @@
+<div class="container m-5">
+    <div class="row" [(formGroup)]="userForm">
+
+        <div class="col-xs-12 col-md-6">
+            <label>Email</label>
+            <input formControlName="email" type="text" placeholder="Email">
+            <div class="text-danger" *ngIf="uf.email.errors && submitted ">
+                <p *ngIf="uf.email.errors.required">Email is required</p>
+                <p *ngIf="uf.email.errors.pattern">Must be Cognizant Email</p>
+                <p *ngIf="uf.email.errors.maxlength">Not more than 100 characters.</p>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-md-6">
+            <label>Password</label>
+            <input formControlName="password" type="password" placeholder="********">
+            <div class="text-danger" *ngIf="uf.password.errors && submitted ">
+                <p *ngIf="uf.password.errors.minlength">Must be more than 8 characters.</p>
+                <p *ngIf="uf.password.errors.maxlength">Not more than 64 characters.</p>
+            </div>
+        </div>
+
+        <div class="col-12" *ngIf="successMessage">
+            <p class="text-success">{{successMessage}}</p>
+        </div>
+
+        <div class="col-12" *ngIf="errorMessage">
+            <p class="text-danger">{{errorMessage}}</p>
+        </div>
+
+        <div class="col-12">
+            <div color="primary" routerLink="/register">
+                Not registered yet?
+            </div>
+            <button class="btn btn-success" (click)="signIn()">Submit</button>
+        </div>
+    </div>
+</div>

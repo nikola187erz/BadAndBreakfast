@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "airbnb-311e5": {
+      "hosting": {
+        "airbnb": [
+          "airbnb-311e5"
+        ]
+      }
+    }
+  }
+}
